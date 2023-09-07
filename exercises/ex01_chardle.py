@@ -29,12 +29,10 @@ if guessed_char == guessed_word[0]:
     print(guessed_char + " found at index 0")
 # increasing number of matches if letter found
     num_of_matches += 1
-  
 
 if guessed_char == guessed_word[1]:
     print(guessed_char + " found at index 1")
     num_of_matches += 1
-
 
 if guessed_char == guessed_word[2]:
     print(guessed_char + " found at index 2")
@@ -59,4 +57,3 @@ if num_of_matches > 1:
 # presenting number of matched letters when none found
 if num_of_matches == 0:
     print("No instances of " + guessed_char + " found in " + guessed_word)
-
