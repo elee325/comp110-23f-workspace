@@ -5,9 +5,8 @@ __author__: str = "730468571"
 
 def all(int_list: list[int], searched_int: int) -> bool:
     """Returns bool indicating whether int is same as all ints in list."""
-    # empty list
     if len(int_list) == 0:
-        raise ValueError ("all() arg is an empty List")
+        return False
     list_idx: int = 0
     # all numbers in list don't match int
     while list_idx < len(int_list):
@@ -20,7 +19,6 @@ def all(int_list: list[int], searched_int: int) -> bool:
 
 def max(input: list[int]) -> int:
     """Given a list of ints, returns largest in List."""
-    # empty list
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     list_idx: int = 0
@@ -36,18 +34,10 @@ def max(input: list[int]) -> int:
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Given two lists of int values, return True if every element at every index is equal in both lists."""
-    list_idx: int = 0
-    # empty list
-    if len(list1) == 0 or len(list2) == 0:
-        raise ValueError("is_equal() arg is an empty List")
-    # matching each element at every index
-    while list_idx < len(list1) and list_idx < (len(list2)):
-        if len(list1) != len(list2):
-            return False
-        if list1[list_idx] != list2[list_idx]:
-            return False
-        list_idx += 1
-    return True
+    if list1 == list2:
+        return True
+    if list1 != list2:
+        return False
 
 
 
