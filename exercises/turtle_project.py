@@ -23,30 +23,30 @@ def main() -> None:
         i += 1
 
 # Drawing the buildings.
-    i: int = -5
-    while i < 3:
-        draw_rectangle(lala, ((i + 1) * -120) - 150, (i - 50) + 100, 100, 350)
-        i += 1
+    idx: int = -5
+    while idx < 3:
+        draw_rectangle(lala, ((idx + 1) * -120) - 150, (idx - 50) + 100, 100, 350)
+        idx += 1
     
 
-    i: int = -5
-    while i < 3:
-        draw_rectangle(lala, ((i + 1) * -120), (i - 50), 100, 350)
-        i += 1
+    idx1: int = -5
+    while idx1 < 3:
+        draw_rectangle(lala, ((idx1 + 1) * -120), (idx1 - 50), 100, 350)
+        idx1 += 1
     
 
 # Drawing windows on buildings randomly.
-    i: int = 0
+    idx2: int = 0
     lala.color(255, 226, 49)
-    while i < 10:
+    while idx2 < 10:
         draw_square(lala, randint(-300, 300), randint(-300, 0), 12)
-        i += 1
+        idx2 += 1
     
-    i: int = 0
+    idx3: int = 0
     lala.color(90, 90, 90)
-    while i < 10:
+    while idx3 < 10:
         draw_square(lala, randint(-300, 300), randint(-300, 0), 12)
-        i += 1
+        idx3 += 1
 
 
 # Draw crescent moon.
