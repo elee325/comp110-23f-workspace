@@ -1,4 +1,4 @@
-"""Testing Conditionals with low card example"""
+"""Testing Conditionals with low card example."""
 
 low_card: int = 2
 current_card: int = 3

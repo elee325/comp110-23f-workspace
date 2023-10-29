@@ -1,13 +1,14 @@
-"""Turtle Drawing: City of Stars"""
+"""Turtle Drawing: City of Stars."""
 
 __author__ = "730468571"
 
 from turtle import Turtle, colormode, done, tracer, update
 from random import randint
 
+
 def main() -> None:
     """The entrypoint of my scene."""
-    tracer(0, 0) # Disable delay in tracing
+    tracer(0, 0)  # Disable delay in tracing
     colormode(255)
     # Declare your Turtle variable(s) here.
     lala: Turtle = Turtle()
@@ -28,7 +29,6 @@ def main() -> None:
         draw_rectangle(lala, ((idx + 1) * -120) - 150, (idx - 50) + 100, 100, 350)
         idx += 1
     
-
     idx1: int = -5
     while idx1 < 3:
         draw_rectangle(lala, ((idx1 + 1) * -120), (idx1 - 50), 100, 350)
@@ -61,8 +61,9 @@ def main() -> None:
 
 # Description of all functions.
 
+
 def set_up(setup: Turtle, x: float, y: float) -> None:
-    """Sets up moving pen before drawing"""
+    """Sets up moving pen before drawing."""
     setup.penup()
     setup.goto(x, y)
     setup.setheading(0.0)
@@ -71,7 +72,6 @@ def set_up(setup: Turtle, x: float, y: float) -> None:
 
 def draw_rectangle(rectangle: Turtle, x: float, y: float, width: float, length: float) -> None:
     """Draw a rectangle of given width/length whose top-left corner is at x, y."""
-    
     rectangle.pensize(3)
     rectangle.pencolor(90, 90, 90)
     rectangle.fillcolor(0, 0, 0)
@@ -89,27 +89,24 @@ def draw_rectangle(rectangle: Turtle, x: float, y: float, width: float, length: 
     
     rectangle.end_fill()
 
+
 def draw_star(star: Turtle, x: float, y: float, side_length: float) -> None:
     """Draw a star at given coordinates given length of sides."""
-
     star.color(255, 226, 49)
     set_up(star, x, y)
 
-
     star.begin_fill()
     
-    for idx in range(0,6):
+    for idx in range(0, 6):
         star.forward(side_length)
         star.right(144)
     
     star.end_fill()
 
+
 def draw_square(square: Turtle, x: float, y: float, width: float) -> None:
     """Draw a square of the given width whose top-left corner is located at x, y."""
-    
     set_up(square, x, y)
-
-
     square.begin_fill()
 
     i: int = 0
@@ -120,10 +117,10 @@ def draw_square(square: Turtle, x: float, y: float, width: float) -> None:
 
     square.end_fill()
 
+
 def draw_circle(circle: Turtle, x: float, y: float, radius: float) -> None:
     """Draw a circle with given radius and coords."""
     set_up(circle, x, y)
-
 
     circle.begin_fill()
     circle.circle(radius)
