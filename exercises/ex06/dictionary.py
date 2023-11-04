@@ -19,17 +19,16 @@ def invert(dict_to_invert: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(input_dict: dict[str, str]) -> str:
     """Returns most popular color and if tie, returns color that appeared first."""
-    color_count: dict[str, str] = {} # Dictionary to keep track of color counts
-    most_pop_color = None # Variable to store most popular color
-    max_count = 0 # Variable to store max count
-    color_order = {} # Keeps track of color order
-
+    color_count: dict[str, int] = {}  # Dictionary to keep track of color counts
+    most_pop_color: str = ""  # Variable to store most popular color
+    max_count = 0  # Variable to store max count
+    color_order: dict[str, int] = {}  # Keeps track of color order
 
     for name in input_dict:
         color = input_dict[name]
 
         if color not in color_order:
-            color_order[color] = len(color_order) # Order specific color based on if its already been added
+            color_order[color] = len(color_order)  # Order specific color based on if its already been added
         if color in color_count:
             color_count[color] += 1
         else:
@@ -45,7 +44,9 @@ def favorite_color(input_dict: dict[str, str]) -> str:
 
 def count(input_list: list[str]) -> dict[str, int]:
     """Gives unique keys from list and counts # of times they appear."""
-    count_dict: dict[str, int] = {} # dictionary keeping count of unique values
+    count_dict: dict[str, int] = {}  # dictionary keeping count of unique values
+    if len(input_list) == 0:
+        return {}
     for key in input_list:
         if key in count_dict:
             count_dict[key] += 1
@@ -58,9 +59,11 @@ def count(input_list: list[str]) -> dict[str, int]:
 def alphabetizer(input_list: list[str]) -> dict[str, list[str]]:
     """Gives dict where each key is unique letter and each value is list of words that begin with that letter."""
     alphabet_dict: dict[str, list[str]] = {}
+    if len(input_list) == 0:
+        return {}
     for word in input_list:
         # Storing first letter of word
-        first_letter = word[0].lower() # Convert to lowercase
+        first_letter = word[0].lower()  # Convert to lowercase
 
         if first_letter in alphabet_dict:
             alphabet_dict[first_letter].append(word)
@@ -73,6 +76,8 @@ def alphabetizer(input_list: list[str]) -> dict[str, list[str]]:
 def update_attendance(attendance_log: dict[str, list[str]], weekday: str, student: str) -> dict[str, list[str]]:
     """Updates attendance then returns new attendance log."""
     # seeing if day is in attendance log then add student, if not, add it and students
+    if len(attendance_log) == 0:
+        return {}
     if weekday in attendance_log:
         attendance_log[weekday].append(student)
     else:
