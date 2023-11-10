@@ -73,14 +73,11 @@ def alphabetizer(input_list: list[str]) -> dict[str, list[str]]:
     return alphabet_dict
 
 
-def update_attendance(attendance_log: dict[str, list[str]], weekday: str, student: str) -> dict[str, list[str]]:
+def update_attendance(attendance_log: dict[str, list[str]], weekday: str, student: str) -> None:
     """Updates attendance then returns new attendance log."""
     # seeing if day is in attendance log then add student, if not, add it and students
-    if len(attendance_log) == 0:
-        return {}
     if weekday in attendance_log:
-        attendance_log[weekday].append(student)
+        if student not in attendance_log[weekday]:
+            attendance_log[weekday].append(student)
     else:
         attendance_log[weekday] = [student]
-
-    return attendance_log
