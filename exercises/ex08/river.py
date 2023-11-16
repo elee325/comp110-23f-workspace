@@ -1,10 +1,13 @@
-"""File to define River class"""
+"""File to define River class."""
+
+__author__: str = "730468571"
 
 from exercises.ex08.fish import Fish
 from exercises.ex08.bear import Bear
 
+
 class River:
-    
+    """Represents the river where bears and fish populate."""    
     # tells you what day of the river's lifecycle
     day: int
     # stores river's bear population
@@ -12,8 +15,8 @@ class River:
     # stores river's fish population
     fish: list[Fish]
 
-    def __init__(self, num_fish: int, num_bears:int):
-        """New River with num_fish Fish and num_bears Bears"""
+    def __init__(self, num_fish: int, num_bears: int):
+        """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
@@ -42,8 +45,8 @@ class River:
         """Bears eat if fish pop greater than 5, eat 3 fish and gain 3 hunger score."""
         for bear in self.bears:
             if len(self.fish) >= 5:
-                River.remove_fish(3)
-                Bear.eat(3)
+                self.remove_fish(3)
+                bear.eat(3)
         return None
     
     def check_hunger(self):
@@ -53,7 +56,7 @@ class River:
         return None
         
     def repopulate_fish(self):
-        """For eveery pair of fish, produce four offspring."""
+        """For every pair of fish, produce four offspring."""
         pairs: int = len(self.fish) // 2
         for pair in range(0, (pairs * 4)):
             new_fish = Fish()
@@ -73,7 +76,7 @@ class River:
         """Prints status of river."""
         print(f"~~~ Day {self.day}: ~~~")
         print(f"Fish population: {len(self.fish)}")
-        print(f"Bear population {len(self.bears)}")
+        print(f"Bear population: {len(self.bears)}")
         return None
             
     def one_river_day(self):
